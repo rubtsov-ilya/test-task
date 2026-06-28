@@ -1,0 +1,27 @@
+@use 'src/styles/_keyframes.scss' as *;
+
+/* base media */
+
+@mixin desktop-small {
+  @media (max-width: 1770px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

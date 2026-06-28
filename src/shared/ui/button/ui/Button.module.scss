@@ -1,0 +1,18 @@
+.button {
+  padding: 24px 69px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+
+  &.with-icon {
+    padding: 18px 26px !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}

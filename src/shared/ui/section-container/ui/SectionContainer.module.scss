@@ -1,0 +1,32 @@
+@use 'src/styles/_mixins.scss' as *;
+
+.section-container {
+  max-width: 1800px;
+  padding: 0 20px;
+  margin: 0 auto;
+  flex-grow: 1;
+
+  &--height {
+    height: 100%;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--max-width-unset {
+    max-width: unset;
+  }
+  @include desktop-small {
+    max-width: 1400px;
+  }
+  @include tablet {
+    max-width: 1004px;
+  }
+  @include tablet-small {
+    max-width: 728px;
+  }
+  @include phone {
+    max-width: 340px;
+  }
+}

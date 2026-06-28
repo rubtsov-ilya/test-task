@@ -1,0 +1,35 @@
+.burger {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-black-light);
+
+  &:hover {
+    .item:nth-child(1) {
+      transform: translateY(-2px);
+    }
+    .item:nth-child(3) {
+      transform: translateY(2px);
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 38px;
+    gap: 5px;
+  }
+
+  .item {
+    height: 2px;
+    width: 100%;
+    background-color: var(--button-bg);
+    will-change: transform;
+    transition: transform 0.2s ease;
+  }
+}
