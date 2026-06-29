@@ -1,0 +1,1 @@
+export { Player } from '@/shared/ui/player/ui/Player.tsx';

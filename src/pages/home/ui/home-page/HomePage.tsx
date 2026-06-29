@@ -1,8 +1,9 @@
 import { FC } from 'react';
 
 import styles from './HomePage.module.scss';
-import { InchapinSection } from '@/pages/home/ui/inchapin-section/InchapinSection.tsx';
 import type { Metadata } from 'next';
+import { InchapinSection } from '@/pages/home/ui/inchapin-section/InchapinSection.tsx';
+import { AboutSection } from '@/pages/home/ui/about-section/AboutSection.tsx';
 
 interface HomePageProps {}
 
@@ -14,9 +15,10 @@ export const metadata: Metadata = {
 export const HomePage: FC<HomePageProps> = ({}) => {
   return (
     <div className={styles['home-page']}>
-        <main>
-          <InchapinSection />
-        </main>
+      <main>
+        <InchapinSection />
+        <AboutSection />
+      </main>
     </div>
   );
 };

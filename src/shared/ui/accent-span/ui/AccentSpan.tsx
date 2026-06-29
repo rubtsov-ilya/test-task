@@ -7,13 +7,13 @@ interface AccentSpanProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;
   children: ReactNode;
   fontWeight?: 'w-800' | 'w-700' | 'w-600' | 'w-500' | 'w-400';
-  color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary';
+  color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary' | 'quinary';
 }
 
 export const AccentSpan: FC<AccentSpanProps> = ({
   className,
   children,
-  fontWeight,
+  fontWeight = 'w-400',
   color = 'primary',
   ...otherProps
 }) => {
