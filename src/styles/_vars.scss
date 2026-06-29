@@ -4,14 +4,17 @@
   --base-black: #000000;
   --base-black-light: #111111;
   --base-transparent-black: rgba(0, 0, 0, 0.2);
+  --base-transparent-gray: #11111180;;
   --base-blue: #2f80ed;
   /* bg */
   --bg-primary: var(--base-white);
+  --bg-secondary: var(--base-blue);
   /* texts */
   --text-white: var(--base-white);
   --text-black: var(--base-black);
   --text-black-light: var(--base-black-light);
   --text-transparent: var(--base-transparent-black);
+  --text-transparent-gray: var(--base-transparent-gray);
   --text-accent: var(--base-blue);
   /* buttons */
   --button-bg: var(--base-blue);
