@@ -3,10 +3,16 @@
   height: 241px;
   position: relative;
   border-radius: 9999px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
 
   .image {
     object-fit: cover;
     object-position: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .overlay-icon {
@@ -14,5 +20,65 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  &:hover {
+    .image {
+      transform: scale(1.08);
+    }
+
+    .overlay-icon {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+  }
+}
+
+.hidden-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -9999;
+  visibility: hidden;
+
+  &:fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+    visibility: visible !important;
+  }
+
+  &:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+    visibility: visible !important;
+  }
+
+  &:-moz-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+    visibility: visible !important;
+  }
+
+  &:-ms-fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 10000 !important;
+    visibility: visible !important;
   }
 }

@@ -68,7 +68,7 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
                 </AccentSpan>
               </div>
               <hr className={styles['line']} />
-              <Player />
+              <Player videoSrc='https://semprogroup.ru/_docs/frontend-task/hover-right.mp4' />
             </div>
           </div>
         </div>
