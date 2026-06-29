@@ -1,0 +1,41 @@
+.call-button {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 15px;
+  height: 15px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-accent);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+
+  span {
+    position: relative;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 100%;
+    line-height: 100%;
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: calc(100% + 16px);
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: var(--text-accent);
+    }
+  }
+
+  &:hover {
+    span {
+      transform: translateY(calc(-100% - 16px));
+    }
+  }
+}

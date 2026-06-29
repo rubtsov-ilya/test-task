@@ -44,14 +44,10 @@
     font-size: 17px;
     line-height: 100%;
     color: var(--text-black-light);
-  }
+    transition: opacity 0.2s ease;
 
-  .call {
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 100%;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--text-accent);
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
