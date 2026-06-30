@@ -17,6 +17,16 @@
     height: 186px;
   }
 
+  @include tablet {
+    width: 133px;
+    height: 133px;
+  }
+
+  @include phone {
+    width: 131px;
+    height: 131px;
+  }
+
   .image {
     object-fit: cover;
     object-position: center;
@@ -35,6 +45,16 @@
     @include desktop-small {
       width: 110px;
       height: 110px;
+    }
+
+    @include tablet {
+      width: 79px;
+      height: 79px;
+    }
+
+    @include phone {
+      width: 77px;
+      height: 77px;
     }
   }
 

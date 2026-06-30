@@ -9,7 +9,8 @@ const AppMedia = createMedia({
     null: 0,
     phone: 361,
     tabletSmall: 769,
-    tablet: 1025,
+    tablet: 1024,
+    desktopSmall: 1771,
   },
 });
 

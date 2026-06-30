@@ -15,6 +15,10 @@
     font-size: 13px;
   }
 
+  @include tablet {
+    font-size: 12px;
+  }
+
   &:hover {
     .item:nth-child(1) {
       transform: translateY(-2px);
@@ -34,6 +38,10 @@
       width: 32px;
       gap: 4px;
     }
+
+    @include phone {
+      width: 29px;
+    }
   }
 
   .item {
@@ -42,5 +50,9 @@
     background-color: var(--button-bg);
     will-change: transform;
     transition: transform 0.2s ease;
+
+    @include phone {
+      background-color: var(--button-black);
+    }
   }
 }

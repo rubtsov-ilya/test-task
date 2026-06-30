@@ -1,13 +1,17 @@
 import { FC } from 'react';
-import styles from './MainHeader.module.scss';
-import { SectionContainer } from '@/shared/ui/section-container';
+
 import Link from 'next/link';
+
+import { SectionContainer } from '@/shared/ui/section-container';
 import { Media } from '@/providers/media-provider';
 import { InchapinLogoIcon } from '@/shared/assets/icons';
 import { Select } from '@/shared/ui/select';
 import { Burger } from '@/shared/ui/burger';
 import { CallButton } from '@/shared/ui/call-button';
 import { FormModal } from '@/widgets/form-modal';
+import { PhoneButton } from '@/shared/ui/phone-button';
+
+import styles from './MainHeader.module.scss';
 
 const APARTMENT_OPTIONS = [
   { value: 'studio', label: 'Студия' },
@@ -17,33 +21,35 @@ const APARTMENT_OPTIONS = [
   { value: '4-room', label: '4-комнатная' },
 ];
 
-interface MainHeaderProps {}
-
-export const MainHeader: FC<MainHeaderProps> = ({}) => {
+export const MainHeader: FC = () => {
   return (
     <header className={styles['main-header']}>
       <SectionContainer>
         <div className={styles['content']}>
           <div className={styles['left-wrapper']}>
             <Burger />
-            <Media greaterThanOrEqual='tabletSmall'>
+            <Media greaterThanOrEqual='tablet'>
               <Select options={APARTMENT_OPTIONS}>Выбрать квартиру</Select>
             </Media>
-            <Media between={['phone', 'tabletSmall']}>
-              <img src='' alt='Иконка телефона' />
+            <Media between={['tabletSmall', 'tablet']}>
+              <FormModal>
+                <PhoneButton />
+              </FormModal>
             </Media>
           </div>
           <InchapinLogoIcon className={styles['logo']} />
           <div className={styles['right-wrapper']}>
-            <Media lessThan={'phone'}>
-              <img src='' alt='Иконка телефона' />
+            <Media lessThan={'tabletSmall'}>
+              <FormModal>
+                <PhoneButton />
+              </FormModal>
             </Media>
-            <Media between={['phone', 'tabletSmall']}>
+            <Media between={['tabletSmall', 'tablet']}>
               <Select options={APARTMENT_OPTIONS}>Выбрать квартиру</Select>
             </Media>
             <Media
               className={styles['tel-with-call-wrapper']}
-              greaterThanOrEqual='tabletSmall'
+              greaterThanOrEqual='tablet'
             >
               <Link className={styles['tel-number']} href='tel:+74955272121'>
                 +7 495 527 21 21

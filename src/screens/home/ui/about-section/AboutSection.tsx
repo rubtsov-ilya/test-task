@@ -1,15 +1,15 @@
 import { FC } from 'react';
 
-import styles from './AboutSection.module.scss';
+import Image from 'next/image';
+
 import { SectionContainer } from '@/shared/ui/section-container';
 import { AccentSpan } from '@/shared/ui/accent-span';
-import Image from 'next/image';
 import { Player } from '@/shared/ui/player';
 import { MiniLogoIcon } from '@/shared/assets/icons';
 
-interface AboutSectionProps {}
+import styles from './AboutSection.module.scss';
 
-export const AboutSection: FC<AboutSectionProps> = ({}) => {
+export const AboutSection: FC = () => {
   return (
     <section className={styles['about-section']}>
       <SectionContainer>
@@ -39,7 +39,11 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
           <div className={styles['right-wrapper']}>
             <div className={styles['rect']} />
             <h2 className={styles['title']}>
-              уютное и безопасное пространство для счастливой,
+              <span className={styles['no-wrap']}>уютное и безопасное</span>
+              <br />
+              <span className={styles['no-wrap']}>
+                пространство для счастливой,
+              </span>
               <br />
               <AccentSpan color={'quaternary'} fontWeight={'w-400'}>
                 спокойной и размеренной жизни
@@ -79,3 +83,5 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
     </section>
   );
 };
+
+export default AboutSection;

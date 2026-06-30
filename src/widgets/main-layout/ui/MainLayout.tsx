@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, ReactNode } from 'react';
+
 import { MainHeader } from '@/widgets/main-header';
 import { SmoothScroll } from '@/shared/ui/smooth-scroll';
 
