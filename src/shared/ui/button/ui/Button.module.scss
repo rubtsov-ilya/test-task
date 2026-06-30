@@ -8,11 +8,9 @@
   font-size: 15px;
   line-height: 100%;
   letter-spacing: 0.07em;
+  transition: all 0.2s ease;
 
-  &.with-icon {
-    padding: 18px 26px !important;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  &:hover {
+    opacity: 0.9;
   }
 }
