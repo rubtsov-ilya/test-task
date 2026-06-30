@@ -1,3 +1,5 @@
+@use 'src/styles/_mixins.scss' as *;
+
 .button {
   padding: 24px 69px;
   background-color: var(--button-bg);
@@ -9,6 +11,10 @@
   line-height: 100%;
   letter-spacing: 0.07em;
   transition: all 0.2s ease;
+
+  @include desktop-small {
+    font-size: 14px;
+  }
 
   &:hover {
     opacity: 0.9;

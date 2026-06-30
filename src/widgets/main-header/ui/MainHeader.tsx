@@ -39,7 +39,7 @@ export const MainHeader: FC<MainHeaderProps> = ({}) => {
               <img src='' alt='Иконка телефона' />
             </Media>
             <Media between={['phone', 'tabletSmall']}>
-              <button>Выбрать квартиру</button>
+              <Select options={APARTMENT_OPTIONS}>Выбрать квартиру</Select>
             </Media>
             <Media
               className={styles['tel-with-call-wrapper']}

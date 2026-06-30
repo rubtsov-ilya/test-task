@@ -1,3 +1,5 @@
+@use 'src/styles/_mixins.scss' as *;
+
 .burger {
   display: flex;
   align-items: center;
@@ -8,6 +10,10 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--text-black-light);
+
+  @include desktop-small {
+    font-size: 13px;
+  }
 
   &:hover {
     .item:nth-child(1) {
@@ -23,6 +29,11 @@
     flex-direction: column;
     width: 38px;
     gap: 5px;
+
+    @include desktop-small {
+      width: 32px;
+      gap: 4px;
+    }
   }
 
   .item {

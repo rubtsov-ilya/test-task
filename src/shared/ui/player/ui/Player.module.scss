@@ -1,3 +1,5 @@
+@use 'src/styles/_mixins.scss' as *;
+
 .player {
   width: 241px;
   height: 241px;
@@ -8,6 +10,12 @@
   border: none;
   background: transparent;
   padding: 0;
+  flex-shrink: 0;
+
+  @include desktop-small {
+    width: 186px;
+    height: 186px;
+  }
 
   .image {
     object-fit: cover;
@@ -21,6 +29,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 142px;
+    height: 142px;
+
+    @include desktop-small {
+      width: 110px;
+      height: 110px;
+    }
   }
 
   &:hover {
