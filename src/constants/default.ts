@@ -1,2 +1,2 @@
-export const EXAMPLE_VALUE = 1024;
+// export const EXAMPLE_VALUE = 1024;
 

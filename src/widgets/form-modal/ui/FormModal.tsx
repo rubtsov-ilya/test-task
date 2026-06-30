@@ -7,6 +7,7 @@ import { CrossIcon } from '@/shared/assets/icons';
 import { Button } from '@/shared/ui/button';
 import { AccentSpan } from '@/shared/ui/accent-span';
 import { Input } from '@/shared/ui/input';
+import { Media } from '@/providers/media-provider';
 // react-modal-core это моя библиотека из моего github, поэтому использую её в проекте
 
 interface FormModalProps {
@@ -95,13 +96,27 @@ export const FormModal: FC<FormModalProps> = ({ children }) => {
               />
             </div>
 
-            <p className={styles['subtitle']}>
-              Нажимая на кнопку «Отправить», вы ознакомлены
-              <br />и соглашаетесь с{' '}
-              <AccentSpan color={'quinary'} underline>
-                политикой обработки персональных данных
-              </AccentSpan>
-            </p>
+            <Media greaterThanOrEqual={'desktopSmall'}>
+              <p className={styles['subtitle']}>
+                Нажимая на кнопку «Отправить», вы ознакомлены
+                <br />и соглашаетесь с{' '}
+                <AccentSpan color={'quinary'} underline>
+                  политикой обработки персональных данных
+                </AccentSpan>
+              </p>
+            </Media>
+
+            <Media lessThan={'desktopSmall'}>
+              <p className={styles['subtitle']}>
+                Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете
+                <br />
+                согласие с{' '}
+                <AccentSpan color={'quinary'} underline>
+                  политикой обработки персональных данных
+                </AccentSpan>
+              </p>
+            </Media>
+
             <Button type='submit' className={styles['submit-button']}>
               Отправить
             </Button>

@@ -11,10 +11,22 @@
     padding: 120px 0 30px 0;
   }
 
+  @include tablet-small {
+    padding: 90px 0 40px 0;
+  }
+
   .content {
     display: grid;
     grid-template-columns: 5fr 2fr 4fr 1fr;
     width: 100%;
+
+    @include tablet {
+      grid-template-columns: 5.5fr 2fr 4.5fr 1fr;
+    }
+
+    @include tablet-small {
+      grid-template-columns: 4fr 1.5fr 5.5fr 0fr;
+    }
   }
 
   .left-wrapper {
@@ -59,6 +71,12 @@
     @include tablet {
       height: 514px;
     }
+
+    @include tablet-small {
+      height: 408px;
+      width: 290px;
+      margin-left: -40px;
+    }
   }
 
   .logo-wrapper {
@@ -85,6 +103,12 @@
       height: 148px;
       width: 148px;
     }
+
+    @include tablet-small {
+      top: 59px;
+      height: 81px;
+      width: 81px;
+    }
   }
 
   .logo {
@@ -99,6 +123,11 @@
     @include tablet {
       height: 49px;
       width: 35px;
+    }
+
+    @include tablet-small {
+      height: 26px;
+      width: 19px;
     }
   }
 
@@ -119,6 +148,11 @@
 
     @include tablet {
       padding-top: 76px;
+    }
+
+    @include tablet-small {
+      padding-top: 50px;
+      padding-right: 10px;
     }
   }
 
@@ -157,6 +191,10 @@
       font-size: 19px;
     }
 
+    @include tablet-small {
+      margin-top: 30px;
+    }
+
     .no-wrap {
       text-wrap: nowrap;
     }
@@ -178,6 +216,10 @@
     @include tablet {
       margin-top: 65px;
       font-size: 12px;
+    }
+
+    @include tablet-small {
+      margin-top: 20px;
     }
   }
 

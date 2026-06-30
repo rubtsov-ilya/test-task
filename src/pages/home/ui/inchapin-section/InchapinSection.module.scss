@@ -11,7 +11,13 @@
   }
 
   @include tablet {
+    height: calc(100dvh - 103px);
     min-height: 535px;
+  }
+
+  @include tablet-small {
+    height: calc(100dvh - 123px);
+    min-height: 751px;
   }
 
   .image-wrapper {
@@ -25,6 +31,10 @@
 
     @include tablet {
       height: 411px;
+    }
+
+    @include tablet-small {
+      height: 488px;
     }
   }
 
@@ -55,6 +65,13 @@
     @include tablet {
       margin-top: 30px;
     }
+
+    @include tablet-small {
+      flex-direction: column;
+      gap: 43px;
+      margin-top: 40px;
+      align-items: flex-start;
+    }
   }
 
   .text-image-wrapper {
@@ -72,6 +89,12 @@
       height: 88px;
       margin-bottom: 6px;
     }
+
+    @include tablet-small {
+      width: 688px;
+      height: 110px;
+      margin-bottom: 0px;
+    }
   }
 
   .span {
@@ -85,6 +108,10 @@
 
     @include tablet {
       font-size: 19px;
+    }
+
+    @include tablet-small {
+      font-size: 26px;
     }
   }
 }

@@ -12,6 +12,10 @@
     min-width: 192px;
   }
 
+  @include tablet-small {
+    min-width: 188px;
+  }
+
   :global {
     .react-select__control {
       padding: 15.5px 26px !important;
@@ -38,10 +42,6 @@
       @include desktop-small {
         padding: 11.5px 18px !important;
         gap: 10px;
-      }
-
-      @include tablet {
-        padding: 12px 18px !important;
       }
     }
 
@@ -138,7 +138,9 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       font-family: var(--first-family);
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 
       &--is-focused {
         background-color: rgba(47, 128, 237, 0.1) !important;
@@ -163,16 +165,16 @@
     justify-content: center;
     flex-shrink: 0;
     transition: transform 0.3s ease;
+    width: 14px !important;
+    height: 15px !important;
+
+    @include desktop-small {
+      width: 12px !important;
+      height: 13px !important;
+    }
 
     path {
-      width: 14px !important;
-      height: 15px !important;
       fill: var(--text-white);
-
-      @include desktop-small {
-        width: 12px !important;
-        height: 13px !important;
-      }
     }
 
     &--open {
@@ -180,4 +182,3 @@
     }
   }
 }
-

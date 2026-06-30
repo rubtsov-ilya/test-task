@@ -10,6 +10,14 @@
     padding: 28.5px 0;
   }
 
+  @include tablet {
+    padding: 30px 0;
+  }
+
+  @include tablet-small {
+    padding: 40px 0;
+  }
+
   background-color: var(--bg-primary);
   .content {
     display: grid;
@@ -23,6 +31,33 @@
     width: 100%;
     margin-right: auto;
     gap: 43px;
+
+    @include desktop-small {
+      gap: 40px;
+    }
+
+    @include tablet {
+      gap: 25px;
+    }
+
+    @include tablet-small {
+      gap: 62px;
+    }
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 43px;
+    width: 43px;
+    border: 1px solid var(--border-gray);
+    border-radius: 999px;
+
+    transition: opacity 0.2s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   .right-wrapper {
@@ -37,6 +72,18 @@
     display: flex;
     align-items: center;
     gap: 45px;
+
+    @include desktop-small {
+      gap: 40px;
+    }
+
+    @include tablet {
+      gap: 35px;
+    }
+
+    @include tablet-small {
+      gap: 62px;
+    }
   }
 
   .logo {

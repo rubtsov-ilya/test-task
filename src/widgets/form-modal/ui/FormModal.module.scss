@@ -22,6 +22,11 @@
     grid-template-columns: 4fr 5fr 4fr;
   }
 
+  @include tablet-small {
+    padding: 40px;
+    grid-template-columns: 2fr 7fr 2fr;
+  }
+
   &[data-state='open'] {
     opacity: 1;
   }
@@ -115,6 +120,11 @@
   @include tablet {
     top: 50px;
     right: 50px;
+  }
+
+  @include tablet-small {
+    top: 40px;
+    right: 40px;
   }
 
   &:hover {
