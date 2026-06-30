@@ -2,6 +2,7 @@
 
 import { ButtonHTMLAttributes, FC } from 'react';
 import classNames from 'classnames';
+
 import styles from './CallButton.module.scss';
 
 interface CallButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

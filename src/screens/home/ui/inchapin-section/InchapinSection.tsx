@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import styles from './InchapinSection.module.scss';
-import { SectionContainer } from '@/shared/ui/section-container';
 import Image from 'next/image';
+
+import { SectionContainer } from '@/shared/ui/section-container';
 import { AccentSpan } from '@/shared/ui/accent-span';
 
-interface InchapinSectionProps {}
+import styles from './InchapinSection.module.scss';
 
-export const InchapinSection: FC<InchapinSectionProps> = ({}) => {
+export const InchapinSection: FC = () => {
   return (
     <section className={styles['inchapin-section']}>
       <SectionContainer>
@@ -49,3 +49,5 @@ export const InchapinSection: FC<InchapinSectionProps> = ({}) => {
     </section>
   );
 };
+
+export default InchapinSection;

@@ -1,7 +1,8 @@
 import { FC, ReactNode, HTMLAttributes } from 'react';
 
-import styles from './AccentSpan.module.scss';
 import classNames from 'classnames';
+
+import styles from './AccentSpan.module.scss';
 
 interface AccentSpanProps extends HTMLAttributes<HTMLSpanElement> {
   className?: string;

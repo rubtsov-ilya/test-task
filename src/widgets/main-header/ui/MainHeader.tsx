@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import styles from './MainHeader.module.scss';
-import { SectionContainer } from '@/shared/ui/section-container';
+
 import Link from 'next/link';
+
+import { SectionContainer } from '@/shared/ui/section-container';
 import { Media } from '@/providers/media-provider';
 import { InchapinLogoIcon } from '@/shared/assets/icons';
 import { Select } from '@/shared/ui/select';
@@ -9,6 +10,8 @@ import { Burger } from '@/shared/ui/burger';
 import { CallButton } from '@/shared/ui/call-button';
 import { FormModal } from '@/widgets/form-modal';
 import { PhoneButton } from '@/shared/ui/phone-button';
+
+import styles from './MainHeader.module.scss';
 
 const APARTMENT_OPTIONS = [
   { value: 'studio', label: 'Студия' },
@@ -18,9 +21,7 @@ const APARTMENT_OPTIONS = [
   { value: '4-room', label: '4-комнатная' },
 ];
 
-interface MainHeaderProps {}
-
-export const MainHeader: FC<MainHeaderProps> = ({}) => {
+export const MainHeader: FC = () => {
   return (
     <header className={styles['main-header']}>
       <SectionContainer>

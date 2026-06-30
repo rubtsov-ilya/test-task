@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 
-import styles from './SectionContainer.module.scss';
 import classNames from 'classnames';
+
+import styles from './SectionContainer.module.scss';
 
 type SectionModifier = 'full-height' | 'no-padding' | 'max-width-unset';
 

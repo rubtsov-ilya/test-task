@@ -1,11 +1,18 @@
 'use client';
 
 import { FC, ReactNode, useId } from 'react';
-import ReactSelect, { DropdownIndicatorProps, components } from 'react-select';
+import ReactSelect, {
+  DropdownIndicatorProps,
+  components,
+  SingleValueProps,
+  PlaceholderProps,
+} from 'react-select';
+
+import classNames from 'classnames';
+
+import { ChevronDownIcon } from '@/shared/assets/icons';
 
 import styles from './Select.module.scss';
-import classNames from 'classnames';
-import { ChevronDownIcon } from '@/shared/assets/icons';
 
 export interface SelectOption {
   value: string;
@@ -22,21 +29,20 @@ interface SelectProps {
   defaultValue?: SelectOption | null;
 }
 
-const DropdownIndicator = (props: DropdownIndicatorProps<SelectOption, false>) => {
+const DropdownIndicator = (
+  props: DropdownIndicatorProps<SelectOption, false>,
+) => {
   const { selectProps } = props;
   const isOpen = selectProps.menuIsOpen;
 
   return (
     <ChevronDownIcon
-      className={classNames(
-        styles['icon'],
-        isOpen && styles['icon--open']
-      )}
+      className={classNames(styles['icon'], isOpen && styles['icon--open'])}
     />
   );
 };
 
-const SingleValue = (props: any) => {
+const SingleValue = (props: SingleValueProps<SelectOption, false>) => {
   const text = String(props.children || '');
   return (
     <components.SingleValue {...props}>
@@ -45,7 +51,7 @@ const SingleValue = (props: any) => {
   );
 };
 
-const Placeholder = (props: any) => {
+const Placeholder = (props: PlaceholderProps<SelectOption, false>) => {
   const text = String(props.children || '');
   return (
     <components.Placeholder {...props}>
@@ -67,12 +73,7 @@ export const Select: FC<SelectProps> = ({
   const defaultId = useId();
 
   return (
-    <div
-      className={classNames(
-        styles['select'],
-        className,
-      )}
-    >
+    <div className={classNames(styles['select'], className)}>
       <ReactSelect<SelectOption, false>
         {...otherProps}
         instanceId={defaultId}
@@ -81,7 +82,7 @@ export const Select: FC<SelectProps> = ({
         onChange={onChange}
         defaultValue={defaultValue}
         placeholder={placeholder || children}
-        classNamePrefix="react-select"
+        classNamePrefix='react-select'
         isSearchable={false}
         components={{
           DropdownIndicator,
@@ -93,4 +94,3 @@ export const Select: FC<SelectProps> = ({
     </div>
   );
 };
-

@@ -1,8 +1,10 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 
-import styles from './PhoneButton.module.scss';
 import classNames from 'classnames';
+
 import { PhoneIcon } from '@/shared/assets/icons';
+
+import styles from './PhoneButton.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

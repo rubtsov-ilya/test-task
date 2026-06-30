@@ -1,18 +1,14 @@
 'use client';
 
-import {
-  ButtonHTMLAttributes,
-  useRef,
-  useEffect,
-  useState,
-  FC,
-} from 'react';
+import { ButtonHTMLAttributes, useRef, useEffect, useState, FC } from 'react';
 import { createPortal } from 'react-dom';
 
-import styles from './Player.module.scss';
 import classNames from 'classnames';
 import Image from 'next/image';
+
 import { VideoOverlayIcon } from '@/shared/assets/icons';
+
+import styles from './Player.module.scss';
 
 interface PlayerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -31,6 +27,7 @@ export const Player: FC<PlayerProps> = ({
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 
@@ -42,36 +39,45 @@ export const Player: FC<PlayerProps> = ({
         window.pageYOffset ||
         document.documentElement.scrollTop;
 
-      if (
-        document.activeElement &&
-        typeof (document.activeElement as any).blur === 'function'
-      ) {
-        (document.activeElement as any).blur();
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
       }
 
       video.play().catch((err) => {
         console.error('Video playback failed:', err);
       });
 
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if ((video as any).webkitRequestFullscreen) {
-        (video as any).webkitRequestFullscreen();
-      } else if ((video as any).mozRequestFullScreen) {
-        (video as any).mozRequestFullScreen();
-      } else if ((video as any).msRequestFullscreen) {
-        (video as any).msRequestFullscreen();
+      const vendorVideo = video as HTMLVideoElement & {
+        webkitRequestFullscreen?: () => Promise<void>;
+        mozRequestFullScreen?: () => Promise<void>;
+        msRequestFullscreen?: () => Promise<void>;
+      };
+
+      if (vendorVideo.requestFullscreen) {
+        vendorVideo.requestFullscreen();
+      } else if (vendorVideo.webkitRequestFullscreen) {
+        vendorVideo.webkitRequestFullscreen();
+      } else if (vendorVideo.mozRequestFullScreen) {
+        vendorVideo.mozRequestFullScreen();
+      } else if (vendorVideo.msRequestFullscreen) {
+        vendorVideo.msRequestFullscreen();
       }
     }
   };
 
   useEffect(() => {
     const handleFullscreenChange = () => {
+      const vendorDocument = document as Document & {
+        webkitFullscreenElement?: Element | null;
+        mozFullScreenElement?: Element | null;
+        msFullscreenElement?: Element | null;
+      };
+
       const isFullscreen =
-        document.fullscreenElement === videoRef.current ||
-        (document as any).webkitFullscreenElement === videoRef.current ||
-        (document as any).mozFullScreenElement === videoRef.current ||
-        (document as any).msFullscreenElement === videoRef.current;
+        vendorDocument.fullscreenElement === videoRef.current ||
+        vendorDocument.webkitFullscreenElement === videoRef.current ||
+        vendorDocument.mozFullScreenElement === videoRef.current ||
+        vendorDocument.msFullscreenElement === videoRef.current;
 
       if (!isFullscreen && videoRef.current) {
         videoRef.current.pause();
@@ -81,11 +87,8 @@ export const Player: FC<PlayerProps> = ({
 
         setTimeout(() => {
           videoRef.current?.blur();
-          if (
-            document.activeElement &&
-            typeof (document.activeElement as any).blur === 'function'
-          ) {
-            (document.activeElement as any).blur();
+          if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur();
           }
           window.scrollTo(0, scrollYRef.current);
         }, 50);
@@ -99,9 +102,18 @@ export const Player: FC<PlayerProps> = ({
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
-      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
+      document.removeEventListener(
+        'webkitfullscreenchange',
+        handleFullscreenChange,
+      );
+      document.removeEventListener(
+        'mozfullscreenchange',
+        handleFullscreenChange,
+      );
+      document.removeEventListener(
+        'MSFullscreenChange',
+        handleFullscreenChange,
+      );
     };
   }, []);
 

@@ -2,8 +2,8 @@
 
 import { FC, ReactNode, useEffect, useRef } from 'react';
 import Scrollbar from 'smooth-scrollbar';
-import styles from './SmoothScroll.module.scss';
 
+import styles from './SmoothScroll.module.scss';
 
 interface SmoothScrollProps {
   children: ReactNode;
@@ -30,10 +30,7 @@ export const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className={styles['smooth-scroll']}
-    >
+    <div ref={containerRef} className={styles['smooth-scroll']}>
       {children}
     </div>
   );

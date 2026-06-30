@@ -1,5 +1,6 @@
-import type { NextConfig } from 'next';
 import path from 'path';
+
+import type { NextConfig } from 'next';
 /* const withSvgr = require('next-svgr'); */
 
 const nextConfig: NextConfig = {
@@ -13,14 +14,14 @@ const nextConfig: NextConfig = {
       config.watchOptions = {
         poll: 3000,
         aggregateTimeout: 300,
-      }
+      };
     }
     config.module.rules.push({
       test: /\.svg$/i,
       use: ['@svgr/webpack'],
     });
     config.resolve.alias['src'] = path.resolve(__dirname, 'src');
-    return config
+    return config;
   },
 
   // Настройки TypeScript
@@ -29,5 +30,5 @@ const nextConfig: NextConfig = {
   //},
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
 export default nextConfig;

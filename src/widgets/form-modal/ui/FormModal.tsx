@@ -1,13 +1,15 @@
 'use client';
 import { FC, ReactNode, useState } from 'react';
 
-import styles from './FormModal.module.scss';
 import { Modal, useModalContext } from 'react-modal-core';
+
 import { CrossIcon } from '@/shared/assets/icons';
 import { Button } from '@/shared/ui/button';
 import { AccentSpan } from '@/shared/ui/accent-span';
 import { Input } from '@/shared/ui/input';
 import { Media } from '@/providers/media-provider';
+
+import styles from './FormModal.module.scss';
 // react-modal-core это моя библиотека из моего github, поэтому использую её в проекте
 
 interface FormModalProps {

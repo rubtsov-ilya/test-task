@@ -1,15 +1,15 @@
 import { FC } from 'react';
 
-import styles from './AboutSection.module.scss';
+import Image from 'next/image';
+
 import { SectionContainer } from '@/shared/ui/section-container';
 import { AccentSpan } from '@/shared/ui/accent-span';
-import Image from 'next/image';
 import { Player } from '@/shared/ui/player';
 import { MiniLogoIcon } from '@/shared/assets/icons';
 
-interface AboutSectionProps {}
+import styles from './AboutSection.module.scss';
 
-export const AboutSection: FC<AboutSectionProps> = ({}) => {
+export const AboutSection: FC = () => {
   return (
     <section className={styles['about-section']}>
       <SectionContainer>
@@ -83,3 +83,5 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
     </section>
   );
 };
+
+export default AboutSection;

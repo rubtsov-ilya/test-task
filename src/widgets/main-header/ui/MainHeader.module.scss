@@ -5,6 +5,7 @@
   top: 0;
   padding: 40px 0;
   z-index: 2;
+  background-color: var(--bg-primary);
 
   @include desktop-small {
     padding: 28.5px 0;
@@ -22,8 +23,6 @@
     padding: 20px 0;
   }
 
-
-  background-color: var(--bg-primary);
   .content {
     display: grid;
     grid-template-columns: 1fr auto 1fr;

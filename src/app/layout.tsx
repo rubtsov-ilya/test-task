@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+
 import '@/styles/_index.scss';
-import { MainLayout } from '@/widgets/main-layout';
 import { ReactNode } from 'react';
+
+import { MainLayout } from '@/widgets/main-layout';
 import { MediaProvider, mediaStyles } from '@/providers/media-provider';
 import { CustomModalProvider } from '@/providers/custom-modal-provider';
 

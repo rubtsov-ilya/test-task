@@ -4,9 +4,13 @@ import {
   useEffect,
   useRef,
   FC,
+  FocusEvent,
+  ChangeEvent,
+  useId,
 } from 'react';
 import { PatternFormat } from 'react-number-format';
 import classNames from 'classnames';
+
 import styles from './Input.module.scss';
 
 export interface InputProps
@@ -40,31 +44,33 @@ export const Input: FC<InputProps> = ({
   });
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const defaultId = useId();
 
   useEffect(() => {
     if (value !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocalValue(Array.isArray(value) ? value.join(', ') : String(value));
     }
   }, [value]);
 
-  const handleFocus = (e: any) => {
+  const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
     setIsFocused(true);
     if (onFocus) onFocus(e);
   };
 
-  const handleBlur = (e: any) => {
+  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
     setIsFocused(false);
     if (onBlur) onBlur(e);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLocalValue(e.target.value);
     if (onChange) onChange(e);
   };
 
   const hasValue = localValue !== '';
   const isActive = isFocused || hasValue;
-  const inputId = id || `input-${Math.random().toString(36).substring(2, 9)}`;
+  const inputId = id || defaultId;
 
   const commonProps = {
     ...otherProps,
