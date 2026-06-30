@@ -3,6 +3,7 @@ import '@/styles/_index.scss';
 import { MainLayout } from '@/widgets/main-layout';
 import { ReactNode } from 'react';
 import { MediaProvider, mediaStyles } from '@/providers/media-provider';
+import { CustomModalProvider } from '@/providers/custom-modal-provider';
 
 export const metadata: Metadata = {
   title: 'My Title',
@@ -37,7 +38,9 @@ export default function RootLayout({
       </head>
       <body>
         <MediaProvider>
-          <MainLayout>{children}</MainLayout>
+          <CustomModalProvider>
+            <MainLayout>{children}</MainLayout>
+          </CustomModalProvider>
         </MediaProvider>
       </body>
     </html>

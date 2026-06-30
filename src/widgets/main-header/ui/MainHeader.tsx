@@ -6,6 +6,8 @@ import { Media } from '@/providers/media-provider';
 import { InchapinLogoIcon } from '@/shared/assets/icons';
 import { Select } from '@/shared/ui/select';
 import { Burger } from '@/shared/ui/burger';
+import { CallButton } from '@/shared/ui/call-button';
+import { FormModal } from '@/widgets/form-modal';
 
 const APARTMENT_OPTIONS = [
   { value: 'studio', label: 'Студия' },
@@ -46,7 +48,9 @@ export const MainHeader: FC<MainHeaderProps> = ({}) => {
               <Link className={styles['tel-number']} href='tel:+74955272121'>
                 +7 495 527 21 21
               </Link>
-              <button className={styles['call']}>Заказать звонок</button>
+              <FormModal>
+                <CallButton />
+              </FormModal>
             </Media>
           </div>
         </div>

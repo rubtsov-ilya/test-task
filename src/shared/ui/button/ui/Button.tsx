@@ -6,13 +6,11 @@ import classNames from 'classnames';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: ReactNode;
-  modifier?: 'with-icon';
 }
 
 export const Button: FC<ButtonProps> = ({
   className,
   children,
-  modifier,
   ...otherProps
 }) => {
   return (
@@ -20,7 +18,6 @@ export const Button: FC<ButtonProps> = ({
       {...otherProps}
       className={classNames(
         styles['button'],
-        modifier && styles[modifier],
         className,
       )}
     >
