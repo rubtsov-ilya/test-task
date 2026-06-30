@@ -8,6 +8,10 @@
     min-width: 203px;
   }
 
+  @include tablet {
+    min-width: 192px;
+  }
+
   :global {
     .react-select__control {
       padding: 15.5px 26px !important;
@@ -35,6 +39,10 @@
         padding: 11.5px 18px !important;
         gap: 10px;
       }
+
+      @include tablet {
+        padding: 12px 18px !important;
+      }
     }
 
     .react-select__value-container {
@@ -61,6 +69,12 @@
         font-size: 13px;
         line-height: 13px !important;
         height: 13px !important;
+      }
+
+      @include tablet {
+        font-size: 12px;
+        line-height: 12px !important;
+        height: 12px !important;
       }
 
       span {

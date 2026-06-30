@@ -16,6 +16,10 @@
     font-size: 14px;
   }
 
+  @include tablet {
+    padding: 20px 40px;
+  }
+
   &:hover {
     opacity: 0.9;
   }

@@ -59,6 +59,10 @@
       font-size: 14px;
     }
 
+    @include tablet {
+      font-size: 13px;
+    }
+
     &:hover {
       opacity: 0.7;
     }

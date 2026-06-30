@@ -2,9 +2,16 @@
 
 .inchapin-section {
   height: calc(100dvh - 131px);
+  min-height: 767px;
+
 
   @include desktop-small {
     height: calc(100dvh - 100px);
+    min-height: 660px;
+  }
+
+  @include tablet {
+    min-height: 535px;
   }
 
   .image-wrapper {
@@ -15,6 +22,10 @@
     @include desktop-small {
       height: 506px;
     }
+
+    @include tablet {
+      height: 411px;
+    }
   }
 
   .image {
@@ -23,6 +34,10 @@
 
     @include desktop-small {
       object-position: center 47%;
+    }
+
+    @include tablet {
+      object-position: center 38%;
     }
   }
 
@@ -36,6 +51,10 @@
     @include desktop-small {
       margin-top: 40px;
     }
+
+    @include tablet {
+      margin-top: 30px;
+    }
   }
 
   .text-image-wrapper {
@@ -47,6 +66,12 @@
       width: 717px;
       height: 114px;
     }
+
+    @include tablet {
+      width: 554px;
+      height: 88px;
+      margin-bottom: 6px;
+    }
   }
 
   .span {
@@ -56,6 +81,10 @@
 
     @include desktop-small {
       font-size: 26px;
+    }
+
+    @include tablet {
+      font-size: 19px;
     }
   }
 }

@@ -25,6 +25,10 @@
   @include desktop-small {
     font-size: 16px;
   }
+
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 .label {

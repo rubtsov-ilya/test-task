@@ -39,7 +39,11 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
           <div className={styles['right-wrapper']}>
             <div className={styles['rect']} />
             <h2 className={styles['title']}>
-              уютное и безопасное пространство для счастливой,
+              <span className={styles['no-wrap']}>уютное и безопасное</span>
+              <br />
+              <span className={styles['no-wrap']}>
+                пространство для счастливой,
+              </span>
               <br />
               <AccentSpan color={'quaternary'} fontWeight={'w-400'}>
                 спокойной и размеренной жизни
