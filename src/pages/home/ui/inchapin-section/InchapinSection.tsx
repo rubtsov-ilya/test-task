@@ -34,14 +34,15 @@ export const InchapinSection: FC<InchapinSectionProps> = ({}) => {
                 для ценителей роскоши
               </AccentSpan>
             </h1>
-            <Image
-              width={862}
-              height={137}
-              priority
-              className={styles['text-image']}
-              src={'/images/foreground/INCHAPIN.svg'}
-              alt={'inchapin'}
-            />
+            <div className={styles['text-image-wrapper']}>
+              <Image
+                fill
+                priority
+                className={styles['text-image']}
+                src={'/images/foreground/INCHAPIN.svg'}
+                alt={'inchapin'}
+              />
+            </div>
           </div>
         </div>
       </SectionContainer>

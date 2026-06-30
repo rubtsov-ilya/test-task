@@ -5,6 +5,11 @@
   top: 0;
   padding: 40px 0;
   z-index: 2;
+
+  @include desktop-small {
+    padding: 28.5px 0;
+  }
+
   background-color: var(--bg-primary);
   .content {
     display: grid;
@@ -37,6 +42,10 @@
   .logo {
     width: 187px !important;
     flex-shrink: 0;
+
+    @include desktop-small {
+      width: 156px !important;
+    }
   }
 
   .tel-number {
@@ -45,6 +54,10 @@
     line-height: 100%;
     color: var(--text-black-light);
     transition: opacity 0.2s ease;
+
+    @include desktop-small {
+      font-size: 14px;
+    }
 
     &:hover {
       opacity: 0.7;

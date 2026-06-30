@@ -1,3 +1,5 @@
+@use 'src/styles/_mixins.scss' as *;
+
 .modal-content {
   position: fixed;
   top: 50%;
@@ -38,14 +40,23 @@
     text-transform: uppercase;
     text-align: center;
     color: var(--text-black);
+
+    @include desktop-small {
+      font-size: 40px;
+    }
   }
 
   .inputs-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 49px;
-    margin-top: 80px;
+    gap: 25px;
+    margin-top: 56px;
     width: 100%;
+
+    @include desktop-small {
+      margin-top: 26px;
+      gap: 17px;
+    }
   }
 
   .subtitle {
@@ -55,6 +66,11 @@
     line-height: 140%;
     text-align: center;
     color: var(--text-transparent-gray);
+    text-wrap: nowrap;
+
+    @include desktop-small {
+      font-size: 12px;
+    }
   }
 
   .submit-button {
@@ -76,10 +92,6 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease, opacity 0.2s ease;
-
-  * {
-    pointer-events: none;
-  }
 
   &:hover {
     transform: scale(1.1) rotate(90deg);

@@ -1,3 +1,5 @@
+@use 'src/styles/_mixins.scss' as *;
+
 .input-container {
   position: relative;
   width: 100%;
@@ -19,6 +21,10 @@
   font-size: 17px;
   line-height: 160%;
   color: var(--text-black);
+
+  @include desktop-small {
+    font-size: 16px;
+  }
 }
 
 .label {
