@@ -5,6 +5,7 @@ import { SectionContainer } from '@/shared/ui/section-container';
 import { AccentSpan } from '@/shared/ui/accent-span';
 import Image from 'next/image';
 import { Player } from '@/shared/ui/player';
+import { MiniLogoIcon } from '@/shared/assets/icons';
 
 interface AboutSectionProps {}
 
@@ -29,7 +30,9 @@ export const AboutSection: FC<AboutSectionProps> = ({}) => {
                 src={'/images/foreground/eden.jpg'}
                 alt={'image'}
               />
-              <div>иконка</div>
+              <div className={styles['logo-wrapper']}>
+                <MiniLogoIcon className={styles['logo']} />
+              </div>
             </div>
           </div>
 

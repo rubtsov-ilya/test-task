@@ -27,6 +27,20 @@
     height: 900px;
   }
 
+  .logo-wrapper {
+    position: absolute;
+    top: 114px;
+    right: 0;
+    height: 259px;
+    width: 259px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border-radius: 9999px;
+    transform: translateX(50%);
+  }
+
   .image {
     object-fit: cover;
     object-position: center;
