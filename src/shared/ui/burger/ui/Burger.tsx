@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
 import styles from './Burger.module.scss';
 import classNames from 'classnames';
+import { Media } from '@/providers/media-provider';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -20,7 +21,7 @@ export const Burger: FC<ButtonProps> = ({
         <div className={styles['item']} />
         <div className={styles['item']} />
       </div>
-      {children || "МЕНЮ"}
+      <Media greaterThan={'phone'}>{children || 'МЕНЮ'}</Media>
     </button>
   );
 };

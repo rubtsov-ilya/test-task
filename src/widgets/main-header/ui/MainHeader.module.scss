@@ -18,6 +18,11 @@
     padding: 40px 0;
   }
 
+  @include phone {
+    padding: 20px 0;
+  }
+
+
   background-color: var(--bg-primary);
   .content {
     display: grid;
@@ -92,6 +97,10 @@
 
     @include desktop-small {
       width: 156px !important;
+    }
+
+    @include phone {
+      width: 131px !important;
     }
   }
 

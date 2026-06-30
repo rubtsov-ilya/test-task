@@ -38,6 +38,10 @@
       width: 32px;
       gap: 4px;
     }
+
+    @include phone {
+      width: 29px;
+    }
   }
 
   .item {
@@ -46,5 +50,9 @@
     background-color: var(--button-bg);
     will-change: transform;
     transition: transform 0.2s ease;
+
+    @include phone {
+      background-color: var(--button-black);
+    }
   }
 }

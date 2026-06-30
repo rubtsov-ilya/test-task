@@ -3,11 +3,12 @@ import styles from './MainHeader.module.scss';
 import { SectionContainer } from '@/shared/ui/section-container';
 import Link from 'next/link';
 import { Media } from '@/providers/media-provider';
-import { InchapinLogoIcon, PhoneIcon } from '@/shared/assets/icons';
+import { InchapinLogoIcon } from '@/shared/assets/icons';
 import { Select } from '@/shared/ui/select';
 import { Burger } from '@/shared/ui/burger';
 import { CallButton } from '@/shared/ui/call-button';
 import { FormModal } from '@/widgets/form-modal';
+import { PhoneButton } from '@/shared/ui/phone-button';
 
 const APARTMENT_OPTIONS = [
   { value: 'studio', label: 'Студия' },
@@ -29,20 +30,20 @@ export const MainHeader: FC<MainHeaderProps> = ({}) => {
             <Media greaterThanOrEqual='tablet'>
               <Select options={APARTMENT_OPTIONS}>Выбрать квартиру</Select>
             </Media>
-            <Media between={['phone', 'tablet']}>
+            <Media between={['tabletSmall', 'tablet']}>
               <FormModal>
-                <button className={styles['phone']}>
-                  <PhoneIcon className={styles['phone-icon']} />
-                </button>
+                <PhoneButton />
               </FormModal>
             </Media>
           </div>
           <InchapinLogoIcon className={styles['logo']} />
           <div className={styles['right-wrapper']}>
-            <Media lessThan={'phone'}>
-              <img src='' alt='Иконка телефона' />
+            <Media lessThan={'tabletSmall'}>
+              <FormModal>
+                <PhoneButton />
+              </FormModal>
             </Media>
-            <Media between={['phone', 'tablet']}>
+            <Media between={['tabletSmall', 'tablet']}>
               <Select options={APARTMENT_OPTIONS}>Выбрать квартиру</Select>
             </Media>
             <Media

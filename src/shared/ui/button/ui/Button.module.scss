@@ -20,6 +20,11 @@
     padding: 20px 40px;
   }
 
+  @include tablet {
+    font-size: 11px;
+    padding: 18px 50px;
+  }
+
   &:hover {
     opacity: 0.9;
   }

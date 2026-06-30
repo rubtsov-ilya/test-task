@@ -22,6 +22,11 @@
     height: 133px;
   }
 
+  @include phone {
+    width: 131px;
+    height: 131px;
+  }
+
   .image {
     object-fit: cover;
     object-position: center;
@@ -45,6 +50,11 @@
     @include tablet {
       width: 79px;
       height: 79px;
+    }
+
+    @include phone {
+      width: 77px;
+      height: 77px;
     }
   }
 

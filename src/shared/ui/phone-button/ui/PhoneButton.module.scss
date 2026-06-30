@@ -1,0 +1,23 @@
+@use 'src/styles/_mixins.scss' as *;
+
+.phone-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 43px;
+  width: 43px;
+  border: 1px solid var(--border-gray);
+  border-radius: 999px;
+
+  transition: opacity 0.2s ease;
+
+  @include phone {
+    height: 41px;
+    width: 41px;
+    border-color: var(--border-primary);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

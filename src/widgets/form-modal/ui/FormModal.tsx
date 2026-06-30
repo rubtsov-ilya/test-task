@@ -106,13 +106,24 @@ export const FormModal: FC<FormModalProps> = ({ children }) => {
               </p>
             </Media>
 
-            <Media lessThan={'desktopSmall'}>
+            <Media between={['tabletSmall', 'desktopSmall']}>
               <p className={styles['subtitle']}>
                 Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете
                 <br />
                 согласие с{' '}
                 <AccentSpan color={'quinary'} underline>
                   политикой обработки персональных данных
+                </AccentSpan>
+              </p>
+            </Media>
+
+            <Media lessThan={'tabletSmall'}>
+              <p className={styles['subtitle']}>
+                Нажимая на кнопку «Отправить», вы ознакомлены <br />и
+                подтверждаете согласие с{' '}
+                <AccentSpan color={'quinary'} underline>
+                  политикой обработки
+                  <br /> персональных данных
                 </AccentSpan>
               </p>
             </Media>
